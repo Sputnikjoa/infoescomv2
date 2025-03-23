@@ -13,7 +13,7 @@ function VerifyEmailPage() {
   const verifyEmail = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`http://localhost:5000/api/auth/verify-email?token=${token}`);
+      const response = await fetch(`https://infoescom.site/api/auth/verify-email?token=${token}`);
       const data = await response.json();
       if (response.ok) {
         setMessage(data.message || "Tu cuenta ha sido verificada. Ahora puedes iniciar sesión.");
