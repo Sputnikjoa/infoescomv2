@@ -39,7 +39,7 @@ function AdminPostsDashboard() {
   useEffect(() => {
     const fetchComunicados = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/posts/approved', {
+        const response = await fetch('https://infoescom.site/api/posts/approved', {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,
@@ -98,7 +98,7 @@ function AdminPostsDashboard() {
     }
 
     try {
-      const response = await fetch(`http://localhost:5000/api/posts/${selectedComunicadoId}`, {
+      const response = await fetch(`https://infoescom.site/api/posts/${selectedComunicadoId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
@@ -181,7 +181,7 @@ function AdminPostsDashboard() {
                   <TableCell>
                     {comunicado.sign && (
                       <img
-                        src={`http://localhost:5000/${comunicado.sign}`}
+                        src={`https://infoescom.site/${comunicado.sign}`}
                         alt="Firma"
                         style={{ width: 50, height: 50 }}
                       />
