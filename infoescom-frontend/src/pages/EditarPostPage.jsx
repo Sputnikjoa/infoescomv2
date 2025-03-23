@@ -57,7 +57,7 @@ function EditarPostPage() {
   // Función auxiliar para construir la URL completa de las imágenes
   const getImageUrl = (img) => {
     if (img.startsWith('uploads/')) {
-      return `http://localhost:5000/${img}`;
+      return `https://infoescom.site/${img}`;
     }
     return img;
   };
@@ -66,7 +66,7 @@ function EditarPostPage() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/posts/${id}`, {
+        const response = await fetch(`https://infoescom.site/api/posts/${id}`, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
@@ -193,7 +193,7 @@ function EditarPostPage() {
     formData.append('status', 'pendiente');
 
     try {
-      const response = await fetch(`http://localhost:5000/api/posts/${id}`, {
+      const response = await fetch(`https://infoescom.site/api/posts/${id}`, {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${token}`,
