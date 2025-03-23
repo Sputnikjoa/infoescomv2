@@ -39,7 +39,7 @@ function EditProfilePage() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/users/me', {
+        const response = await fetch('https://infoescom.site/api/users/me', {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
@@ -102,7 +102,7 @@ function EditProfilePage() {
         updatedData.password = password; // Enviar la contraseña si se está cambiando
       }
   
-      const response = await fetch('http://localhost:5000/api/users/me', {
+      const response = await fetch('https://infoescom.site/api/users/me', {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
