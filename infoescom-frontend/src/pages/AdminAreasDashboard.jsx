@@ -64,7 +64,7 @@ function AdminAreasDashboard() {
   // Función para obtener áreas desde el backend
   const fetchAreas = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/areas', {
+      const response = await fetch('https://infoescom.site/api/areas', {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
@@ -96,7 +96,7 @@ function AdminAreasDashboard() {
       let response;
       if (editingArea) {
         // Actualizar área
-        response = await fetch(`http://localhost:5000/api/areas/${editingArea._id}`, {
+        response = await fetch(`https://infoescom.site/api/areas/${editingArea._id}`, {
           method: 'PUT', // o PATCH según la implementación del backend
           headers: {
             'Content-Type': 'application/json',
@@ -106,7 +106,7 @@ function AdminAreasDashboard() {
         });
       } else {
         // Crear nueva área
-        response = await fetch('http://localhost:5000/api/areas', {
+        response = await fetch('https://infoescom.site/api/areas', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -135,7 +135,7 @@ function AdminAreasDashboard() {
   // Manejar eliminar área
   const handleDeleteArea = async (areaId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/areas/${areaId}`, {
+      const response = await fetch(`https://infoescom.site/api/areas/${areaId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -164,7 +164,7 @@ function AdminAreasDashboard() {
       let response;
       if (editingSubarea) {
         // Actualizar subárea
-        response = await fetch(`http://localhost:5000/api/areas/${editingSubarea._id}`, {
+        response = await fetch(`https://infoescom.site/api/areas/${editingSubarea._id}`, {
           method: 'PUT', // o PATCH
           headers: {
             'Content-Type': 'application/json',
@@ -174,7 +174,7 @@ function AdminAreasDashboard() {
         });
       } else {
         // Crear nueva subárea. Se envía el parent para relacionarla con el área.
-        response = await fetch('http://localhost:5000/api/areas', {
+        response = await fetch('https://infoescom.site/api/areas', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -208,7 +208,7 @@ function AdminAreasDashboard() {
   // Manejar eliminar subárea
   const handleDeleteSubarea = async (subareaId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/areas/${subareaId}`, {
+      const response = await fetch(`https://infoescom.site/api/areas/${subareaId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
