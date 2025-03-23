@@ -56,7 +56,7 @@ function QuiltedImageList({ images, getImageUrl, onImageClick }) {
 // Función auxiliar para obtener la URL completa de la imagen o documento
 const getFileUrl = (file) => {
   if (file.startsWith("uploads/")) {
-    return `http://localhost:5000/${file}`;
+    return `https://infoescom.site/${file}`;
   }
   return file;
 };
@@ -135,7 +135,7 @@ function FeedPage() {
   // Obtener las suscripciones del usuario
   const fetchUserSubscriptions = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/users/me", {
+      const response = await fetch("https://infoescom.site/api/users/me", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -186,7 +186,7 @@ function FeedPage() {
 
       if (userSubscriptions.includes(areaId)) {
         // Desuscribir
-        const response = await fetch("http://localhost:5000/api/notifications/unsubscribe", {
+        const response = await fetch("https://infoescom.site/api/notifications/unsubscribe", {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
@@ -202,7 +202,7 @@ function FeedPage() {
         }
       } else {
         // Suscribir
-        const response = await fetch("http://localhost:5000/api/notifications/subscribe", {
+        const response = await fetch("https://infoescom.site/api/notifications/subscribe", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -274,7 +274,7 @@ function FeedPage() {
 
   const fetchPosts = async () => {
     try {
-      let url = `http://localhost:5000/api/posts/approved?page=${page}&limit=${limit}`;
+      let url = `https://infoescom.site/api/posts/approved?page=${page}&limit=${limit}`;
       if (selectedSubArea) url += `&area=${selectedSubArea}`;
       else if (selectedArea) url += `&area=${selectedArea}`;
       if (searchQueryParam) url += `&search=${encodeURIComponent(searchQueryParam)}`;
@@ -327,7 +327,7 @@ function FeedPage() {
 
   const fetchAreas = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/areas", {
+      const response = await fetch("https://infoescom.site/api/areas", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -367,7 +367,7 @@ function FeedPage() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/posts/${postId}/${endpoint}`,
+        `https://infoescom.site/api/posts/${postId}/${endpoint}`,
         {
           method: "PATCH",
           headers: {
@@ -396,7 +396,7 @@ function FeedPage() {
   };
 
   const getImageUrl = (img) => {
-    if (img.startsWith("uploads/")) return `http://localhost:5000/${img}`;
+    if (img.startsWith("uploads/")) return `https://infoescom.site/${img}`;
     return img;
   };
 
@@ -458,7 +458,7 @@ function FeedPage() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/posts/${selectedPostId}`,
+        `https://infoescom.site/api/posts/${selectedPostId}`,
         {
           method: "DELETE",
           headers: {
