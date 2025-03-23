@@ -18,7 +18,7 @@ function VerifyEmailPage() {
       if (response.ok) {
         setMessage(data.message || "Tu cuenta ha sido verificada. Ahora puedes iniciar sesión.");
       } else {
-        setMessage(data.message || "No se pudo verificar tu cuenta. El enlace puede haber expirado.");
+        setMessage(data.message || "No se pudo verificar tu cuenta. El enlace puede haber expirado. Regístrate de nuevo");
       }
     } catch (error) {
       console.error(error);
