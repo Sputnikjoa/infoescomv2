@@ -31,7 +31,7 @@ function JefePage() {
   // Función para cargar las publicaciones pendientes de revisión.
   const fetchPosts = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/posts/pending', {
+      const response = await fetch('https://infoescom.site/api/posts/pending', {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
