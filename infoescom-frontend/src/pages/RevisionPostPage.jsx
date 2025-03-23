@@ -53,7 +53,7 @@ function RevisionPostPage() {
   // Función auxiliar para obtener la URL completa de la imagen o documento
   const getFileUrl = (file) => {
     if (file.startsWith('uploads/')) {
-      return `http://localhost:5000/${file}`;
+      return `https://infoescom.site/${file}`;
     }
     return file;
   };
@@ -62,7 +62,7 @@ function RevisionPostPage() {
   useEffect(() => {
     const fetchPost = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/posts/${id}`, {
+        const response = await fetch(`https://infoescom.site/api/posts/${id}`, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
@@ -86,7 +86,7 @@ function RevisionPostPage() {
   useEffect(() => {
     const fetchAreas = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/areas', {
+        const response = await fetch('https://infoescom.site/api/areas', {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
@@ -153,7 +153,7 @@ function RevisionPostPage() {
       formData.append('feedback', feedback);
     }
     try {
-      const response = await fetch(`http://localhost:5000/api/posts/${id}/review`, {
+      const response = await fetch(`https://infoescom.site/api/posts/${id}/review`, {
         method: 'PATCH',
         headers: {
           'Authorization': `Bearer ${token}`,
