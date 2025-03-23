@@ -53,7 +53,7 @@ function CrearPostPage() {
 
   const fetchAreas = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/areas', {
+      const response = await fetch('https://infoescom.site/api/areas', {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
@@ -140,7 +140,7 @@ function CrearPostPage() {
       formData.append('documents', doc);
     });
     try {
-      const response = await fetch('http://localhost:5000/api/posts', {
+      const response = await fetch('https://infoescom.site/api/posts', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
