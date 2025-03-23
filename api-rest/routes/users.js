@@ -79,7 +79,7 @@ router.post("/forgot-password", async (req, res) => {
     });
 
     // Construir el enlace de restablecimiento (ajusta la URL al dominio de tu frontend)
-    const resetLink = `http://localhost:5173/reset-password?token=${token}`;
+    const resetLink = `https://infoescom.site/reset-password?token=${token}`;
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
