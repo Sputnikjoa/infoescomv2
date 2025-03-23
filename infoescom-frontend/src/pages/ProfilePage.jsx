@@ -36,7 +36,7 @@ function ProfilePage() {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/users/me', {
+        const response = await fetch('https://infoescom.site/api/users/me', {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
@@ -61,7 +61,7 @@ function ProfilePage() {
 
     const fetchAreas = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/areas', {
+        const response = await fetch('https://infoescom.site/api/areas', {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`,
