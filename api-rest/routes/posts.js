@@ -280,7 +280,7 @@ router.patch('/:id/review', auth, upload.single('sign'), async (req, res) => {
       };
 
       // Llamar al endpoint de notificaciones (se reusa el token)
-      const notifResponse = await fetch('http://localhost:5000/api/notifications/send', {
+      const notifResponse = await fetch('https://infoescom.site/api/notifications/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
