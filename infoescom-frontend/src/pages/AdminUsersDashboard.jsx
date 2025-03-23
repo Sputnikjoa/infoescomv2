@@ -62,7 +62,7 @@ function AdminUsersDashboard() {
   // Función para obtener usuarios desde el backend
   const fetchUsers = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/users", {
+      const response = await fetch("https://infoescom.site/api/users", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -83,7 +83,7 @@ function AdminUsersDashboard() {
   // Función para obtener áreas (y subáreas)
   const fetchAreas = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/areas", {
+      const response = await fetch("https://infoescom.site/api/areas", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -179,7 +179,7 @@ function AdminUsersDashboard() {
       }
       if (editingUser) {
         // Actualizar usuario (sin contraseña)
-        response = await fetch(`http://localhost:5000/api/users/${editingUser._id}`, {
+        response = await fetch(`https://infoescom.site/api/users/${editingUser._id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -190,7 +190,7 @@ function AdminUsersDashboard() {
       } else {
         // Crear usuario (incluir contraseña)
         userPayload.password = userPassword;
-        response = await fetch("http://localhost:5000/api/users", {
+        response = await fetch("https://infoescom.site/api/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -222,7 +222,7 @@ function AdminUsersDashboard() {
   // Eliminar usuario tras confirmar
   const handleDeleteUser = async () => {
     try {
-      const response = await fetch(`http://localhost:5000/api/users/${userToDelete}`, {
+      const response = await fetch(`https://infoescom.site/api/users/${userToDelete}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
