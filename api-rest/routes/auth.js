@@ -40,7 +40,7 @@ router.post('/signup', async (req, res) => {
         });
 
         // Construir el enlace de verificación (ajusta la URL según tu frontend)
-        const verificationLink = `http://localhost:5173/verify-email?token=${verificationToken}`;
+        const verificationLink = `https://infoescom.site/verify-email?token=${verificationToken}`;
 
         const mailOptions = {
           from: process.env.EMAIL_USER,
@@ -86,7 +86,7 @@ router.post('/signup', async (req, res) => {
     });
 
     // Construir el enlace de verificación
-    const verificationLink = `http://localhost:5173/verify-email?token=${verificationToken}`;
+    const verificationLink = `https://infoescom.site/verify-email?token=${verificationToken}`;
 
     const mailOptions = {
       from: process.env.EMAIL_USER,
