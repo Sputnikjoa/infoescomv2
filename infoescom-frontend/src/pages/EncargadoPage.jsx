@@ -33,7 +33,7 @@ function EncargadoPage() {
   // Función para cargar las publicaciones del encargado.
   const fetchPosts = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/posts/myPosts', {
+      const response = await fetch('https://infoescom.site/api/posts/myPosts', {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
