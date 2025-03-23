@@ -50,7 +50,7 @@ function NotificacionesPage() {
   // Obtener las áreas con subáreas desde el endpoint /api/areas
   const fetchAreas = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/areas', {
+      const response = await fetch('https://infoescom.site/api/areas', {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
@@ -94,7 +94,7 @@ function NotificacionesPage() {
   // Obtener las suscripciones del usuario desde GET /api/users/me (campo "suscribed")
   const fetchUserSubscriptions = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/users/me', {
+      const response = await fetch('https://infoescom.site/api/users/me', {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
@@ -160,7 +160,7 @@ function NotificacionesPage() {
   
       if (userSubscriptions.includes(areaId)) {
         // Desuscribir
-        const response = await fetch('http://localhost:5000/api/notifications/unsubscribe', {
+        const response = await fetch('https://infoescom.site/api/notifications/unsubscribe', {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
@@ -176,7 +176,7 @@ function NotificacionesPage() {
         }
       } else {
         // Suscribir
-        const response = await fetch('http://localhost:5000/api/notifications/subscribe', {
+        const response = await fetch('https://infoescom.site/api/notifications/subscribe', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
